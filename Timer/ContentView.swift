@@ -37,38 +37,21 @@ struct ContentView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack(spacing:20) {
-            Button("시작") {
-                SoundManager.instance.playSound()
+        TabView {
+            VStack(spacing:20) {
+                Button("시작") {
+                    SoundManager.instance.playSound()
+                }
+                
+                Button("중지") {
+                    SoundManager.instance.stopSound()
+                }
             }
-            
-            Button("중지") {
-                SoundManager.instance.stopSound()
-            }
+                .tabItem {
+                    Image(systemName: "alarm")
+                    Text("알람")
+                }
         }
-        
-        //아래는 특정 시간 후에 알림 울리는 부분임
-        /*
-        ZStack {
-            Text(convertSecondsToTime(timeInSeconds: timeRemaining))
-                .font(.system(size: 50))
-                .onReceive(timer, perform: { _ in
-                    if timerRunning {
-                        if timeRemaining > 0 {
-                            timeRemaining -= 1
-                            if timeRemaining == 0 {
-                                timerRunning = false
-                                SoundManager.instance.playSound()
-                            }
-                        }
-                    }
-                    
-                })
-        }
-        .onAppear(perform: {
-            calcRemain()
-        })
-         */
     }
     
     func convertSecondsToTime(timeInSeconds: Int) -> String {
