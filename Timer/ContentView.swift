@@ -47,6 +47,7 @@ struct ContentView: View {
             }
         }
         
+        //아래는 특정 시간 후에 알림 울리는 부분임
         /*
         ZStack {
             Text(convertSecondsToTime(timeInSeconds: timeRemaining))
