@@ -14,6 +14,7 @@ class TimerViewModel: ObservableObject {
     @Published var timeRemaining: Int
     @Published var isPaused: Bool
     var notificationService: NotificationService
+    var soundManager: SoundManager
     
     init(
         isDisplaySetTimeView: Bool = true,
@@ -21,7 +22,8 @@ class TimerViewModel: ObservableObject {
         timer: Timer? = nil,
         timeRemaining: Int = 0,
         isPaused: Bool = false,
-        notificationService: NotificationService = .init()
+        notificationService: NotificationService = .init(),
+        soundManager: SoundManager = .init()
     ) {
         self.isDisplaySetTimeView = isDisplaySetTimeView
         self.time = time
@@ -29,6 +31,7 @@ class TimerViewModel: ObservableObject {
         self.timeRemaining = timeRemaining
         self.isPaused = isPaused
         self.notificationService = notificationService
+        self.soundManager = soundManager
     }
 }
 
@@ -65,12 +68,14 @@ private extension TimerViewModel {
                 self.timeRemaining -= 1
             } else {
                 self.stopTimer()
+                self.soundManager.playSound()
                 self.notificationService.sendNotification()
             }
         }
     }
     
     func stopTimer() {
+        self.soundManager.stopSound()
         timer?.invalidate()
         timer = nil
     }

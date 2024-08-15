@@ -17,6 +17,7 @@
 		9426EF792C46B371002E8132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9426EF782C46B371002E8132 /* Preview Assets.xcassets */; };
 		9475598E2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9475598D2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 */; };
 		949371E92C68CC1E0097C39D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949371E82C68CC1E0097C39D /* TimerView.swift */; };
+		94BDAF922C6D9119001DDB49 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BDAF912C6D9119001DDB49 /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9426EF782C46B371002E8132 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9475598D2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "relaxing-electronic-music-free.mp3"; sourceTree = "<group>"; };
 		949371E82C68CC1E0097C39D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		94BDAF912C6D9119001DDB49 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				941274AD2C5FAAD2007F42BC /* NotificationService.swift */,
+				94BDAF912C6D9119001DDB49 /* SoundManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949371E92C68CC1E0097C39D /* TimerView.swift in Sources */,
+				94BDAF922C6D9119001DDB49 /* SoundManager.swift in Sources */,
 				941274AE2C5FAAD2007F42BC /* NotificationService.swift in Sources */,
 				941274AB2C5F9A9B007F42BC /* Time.swift in Sources */,
 				9426EF742C46B36F002E8132 /* ContentView.swift in Sources */,

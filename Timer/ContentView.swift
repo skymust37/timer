@@ -4,7 +4,7 @@
 //
 //  Created by 김승현 on 7/16/24.
 //
-
+/*
 import SwiftUI
 import Combine
 import AVKit
@@ -72,3 +72,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+*/
