@@ -7,20 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941274AB2C5F9A9B007F42BC /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941274AA2C5F9A9B007F42BC /* Time.swift */; };
+		941274AE2C5FAAD2007F42BC /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941274AD2C5FAAD2007F42BC /* NotificationService.swift */; };
+		941274B12C67269F007F42BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941274B02C67269F007F42BC /* AppDelegate.swift */; };
+		941274B42C673178007F42BC /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941274B32C673178007F42BC /* TimerViewModel.swift */; };
 		9426EF722C46B36F002E8132 /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426EF712C46B36F002E8132 /* TimerApp.swift */; };
 		9426EF742C46B36F002E8132 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9426EF732C46B36F002E8132 /* ContentView.swift */; };
 		9426EF762C46B371002E8132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9426EF752C46B371002E8132 /* Assets.xcassets */; };
 		9426EF792C46B371002E8132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9426EF782C46B371002E8132 /* Preview Assets.xcassets */; };
 		9475598E2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9475598D2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 */; };
+		949371E92C68CC1E0097C39D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949371E82C68CC1E0097C39D /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		941274AA2C5F9A9B007F42BC /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		941274AD2C5FAAD2007F42BC /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		941274B02C67269F007F42BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		941274B32C673178007F42BC /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		9426EF6E2C46B36F002E8132 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9426EF712C46B36F002E8132 /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
 		9426EF732C46B36F002E8132 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9426EF752C46B371002E8132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9426EF782C46B371002E8132 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9475598D2C4D32F700AB0801 /* relaxing-electronic-music-free.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "relaxing-electronic-music-free.mp3"; sourceTree = "<group>"; };
+		949371E82C68CC1E0097C39D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +44,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941274A92C5F9A78007F42BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				941274AA2C5F9A9B007F42BC /* Time.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		941274AC2C5FAAC5007F42BC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				941274AD2C5FAAD2007F42BC /* NotificationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		941274AF2C672686007F42BC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9426EF712C46B36F002E8132 /* TimerApp.swift */,
+				941274B02C67269F007F42BC /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		941274B22C67315C007F42BC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				941274B32C673178007F42BC /* TimerViewModel.swift */,
+				949371E82C68CC1E0097C39D /* TimerView.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
 		9426EF652C46B36F002E8132 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +97,11 @@
 		9426EF702C46B36F002E8132 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				941274B22C67315C007F42BC /* Feature */,
+				941274AF2C672686007F42BC /* App */,
+				941274AC2C5FAAC5007F42BC /* Service */,
+				941274A92C5F9A78007F42BC /* Model */,
 				9475598C2C4D32A500AB0801 /* Sounds */,
-				9426EF712C46B36F002E8132 /* TimerApp.swift */,
 				9426EF732C46B36F002E8132 /* ContentView.swift */,
 				9426EF752C46B371002E8132 /* Assets.xcassets */,
 				9426EF772C46B371002E8132 /* Preview Content */,
@@ -149,7 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949371E92C68CC1E0097C39D /* TimerView.swift in Sources */,
+				941274AE2C5FAAD2007F42BC /* NotificationService.swift in Sources */,
+				941274AB2C5F9A9B007F42BC /* Time.swift in Sources */,
 				9426EF742C46B36F002E8132 /* ContentView.swift in Sources */,
+				941274B12C67269F007F42BC /* AppDelegate.swift in Sources */,
+				941274B42C673178007F42BC /* TimerViewModel.swift in Sources */,
 				9426EF722C46B36F002E8132 /* TimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

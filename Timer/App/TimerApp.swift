@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TimerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelgate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimerView()
         }
     }
 }
