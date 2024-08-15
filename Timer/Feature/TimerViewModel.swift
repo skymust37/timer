@@ -51,8 +51,7 @@ extension TimerViewModel {
         if isPaused {
             startTimer()
         } else {
-            timer?.invalidate()
-            timer = nil
+            stopTimer()
         }
         isPaused.toggle()
     }
