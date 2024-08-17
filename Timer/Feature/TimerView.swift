@@ -13,9 +13,9 @@ struct TimerView: View {
     
     var body: some View {
         TabView(selection: $selectedTab){
-            Text("Calendar")
-                .modifier(TabItemModifier(imageName: "calendar", title: "Calendar"))
-                .tag(1)
+                CalendarView()
+                    .modifier(TabItemModifier(imageName: "calendar", title: "Calendar"))
+                    .tag(1)
             if timerViewModel.isDisplaySetTimeView {
                 SetTimerView(timerViewModel: timerViewModel)
                     .modifier(TabItemModifier(imageName: "timer", title: "Timer"))
@@ -40,6 +40,20 @@ private struct TabItemModifier: ViewModifier {
                 Image(systemName: imageName)
                 Text(title)
             }
+    }
+}
+
+// MARK: - 캘린더 뷰
+private struct CalendarView: View {
+    @State private var date = Date()
+
+    var body: some View {
+        DatePicker(
+            "Start Date",
+            selection: $date,
+            displayedComponents: [.hourAndMinute, .date]
+        )
+        .datePickerStyle(.graphical)
     }
 }
 
