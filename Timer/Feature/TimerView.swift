@@ -198,24 +198,7 @@ private struct TimerOperationView: View {
                                 )
                         }
                     )
-                } else {
-                    Button(
-                        action: {
-                            timerViewModel.stopTimerAndStopSound()
-                        },
-                        label: {
-                            Text("중지")
-                                .font(.system(size: 14))
-                                .foregroundColor(.black)
-                                .padding(.vertical, 25)
-                                .padding(.horizontal, 22)
-                                .background(
-                                    Circle()
-                                        .fill(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.3))
-                                )
-                        }
-                    )
-                }
+                } 
             }
             .padding(.horizontal, 20)
         }
