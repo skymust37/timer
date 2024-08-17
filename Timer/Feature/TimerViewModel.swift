@@ -60,6 +60,7 @@ extension TimerViewModel {
         self.soundManager.stopSound()
         timer?.invalidate()
         timer = nil
+        isDisplaySetTimeView = true
     }
 }
 
