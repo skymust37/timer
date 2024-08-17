@@ -43,7 +43,7 @@ extension TimerViewModel {
     }
     
     func cancleBtnTapped() {
-        stopTimer()
+        onlyStopTimer()
         isDisplaySetTimeView = true
     }
     
@@ -51,9 +51,15 @@ extension TimerViewModel {
         if isPaused {
             startTimer()
         } else {
-            stopTimer()
+            onlyStopTimer()
         }
         isPaused.toggle()
+    }
+    
+    func stopTimerAndStopSound() { //타이머 종료후 중지 버튼 눌렀을 때
+        self.soundManager.stopSound()
+        timer?.invalidate()
+        timer = nil
     }
 }
 
@@ -66,15 +72,14 @@ private extension TimerViewModel {
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
             } else {
-                self.stopTimer()
+                self.onlyStopTimer()
                 self.soundManager.playSound()
                 self.notificationService.sendNotification()
             }
         }
     }
     
-    func stopTimer() {
-        self.soundManager.stopSound()
+    func onlyStopTimer() { //취소, 일시정지
         timer?.invalidate()
         timer = nil
     }

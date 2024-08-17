@@ -181,22 +181,41 @@ private struct TimerOperationView: View {
                 
                 Spacer()
                 
-                Button(
-                    action: {
-                        timerViewModel.pauseOrRestartBtnTapped()
-                    },
-                    label: {
-                        Text(timerViewModel.isPaused ? "계속진행" : "일시정지")
-                            .font(.system(size: 14))
-                            .foregroundColor(.black)
-                            .padding(.vertical, 25)
-                            .padding(.horizontal, 7)
-                            .background(
-                                Circle()
-                                    .fill(Color(red: 1, green: 0.75, blue: 0.52).opacity(0.3))
-                            )
-                    }
-                )
+                if timerViewModel.timeRemaining > 0 {
+                    Button(
+                        action: {
+                            timerViewModel.pauseOrRestartBtnTapped()
+                        },
+                        label: {
+                            Text(timerViewModel.isPaused ? "계속진행" : "일시정지")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
+                                .padding(.vertical, 25)
+                                .padding(.horizontal, 7)
+                                .background(
+                                    Circle()
+                                        .fill(Color(red: 1, green: 0.75, blue: 0.52).opacity(0.3))
+                                )
+                        }
+                    )
+                } else {
+                    Button(
+                        action: {
+                            timerViewModel.stopTimerAndStopSound()
+                        },
+                        label: {
+                            Text("중지")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
+                                .padding(.vertical, 25)
+                                .padding(.horizontal, 22)
+                                .background(
+                                    Circle()
+                                        .fill(Color(red: 0.85, green: 0.85, blue: 0.85).opacity(0.3))
+                                )
+                        }
+                    )
+                }
             }
             .padding(.horizontal, 20)
         }
