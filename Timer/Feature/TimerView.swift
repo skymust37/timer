@@ -181,26 +181,40 @@ private struct TimerOperationView: View {
                 
                 Spacer()
                 
-                if timerViewModel.timeRemaining > 0 {
-                    Button(
-                        action: {
-                            timerViewModel.pauseOrRestartBtnTapped()
-                        },
-                        label: {
-                            Text(timerViewModel.isPaused ? "계속진행" : "일시정지")
-                                .font(.system(size: 14))
-                                .foregroundColor(.black)
-                                .padding(.vertical, 25)
-                                .padding(.horizontal, 7)
-                                .background(
-                                    Circle()
-                                        .fill(Color(red: 1, green: 0.75, blue: 0.52).opacity(0.3))
-                                )
-                        }
-                    )
-                } 
+                continueAndPauseButton (
+                    title: timerViewModel.isPaused ? "계속진행" : "일시정지",
+                    action: { timerViewModel.pauseOrRestartBtnTapped() },
+                    backgroundColor: Color(red: 1, green: 0.75, blue: 0.52).opacity(0.3),
+                    isEnabled: timerViewModel.timeRemaining > 0
+                )
             }
             .padding(.horizontal, 20)
         }
+    }
+}
+
+private struct continueAndPauseButton: View {
+    var title: String
+    var action: () -> Void
+    var backgroundColor: Color
+    var isEnabled: Bool = true
+
+    var body: some View {
+        Button(
+            action: action,
+            label: {
+                Text(title)
+                    .font(.system(size: 14))
+                    .foregroundColor(.black)
+                    .padding(.vertical, 25)
+                    .padding(.horizontal, 7)
+                    .background(
+                        Circle()
+                            .fill(backgroundColor)
+                    )
+                    .opacity(isEnabled ? 1.0:0.3)
+            }
+        )
+        .disabled(!isEnabled)
     }
 }
