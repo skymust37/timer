@@ -9,22 +9,27 @@ import SwiftUI
 
 struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel()
+    @State private var selectedTab = 1  // 현재 선택된 탭 인덱스를 저장
     
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab){
             Text("Calendar")
                 .modifier(TabItemModifier(imageName: "calendar", title: "Calendar"))
+                .tag(1)
             if timerViewModel.isDisplaySetTimeView {
                 SetTimerView(timerViewModel: timerViewModel)
                     .modifier(TabItemModifier(imageName: "timer", title: "Timer"))
+                    .tag(2)
             } else {
                 TimerOperationView(timerViewModel: timerViewModel)
                     .modifier(TabItemModifier(imageName: "timer", title: "Timer"))
+                    .tag(2)
             }
         }
     }
 }
 
+// MARK: - 탭 아이템 리팩토링
 private struct TabItemModifier: ViewModifier {
     var imageName: String
     var title: String
@@ -212,6 +217,7 @@ private struct TimerOperationView: View {
     }
 }
 
+// MARK: - 일시정지 계속진행 리팩토링
 private struct continueAndPauseButton: View {
     var title: String
     var action: () -> Void
