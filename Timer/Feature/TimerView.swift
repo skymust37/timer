@@ -11,10 +11,25 @@ struct TimerView: View {
     @StateObject var timerViewModel = TimerViewModel()
     
     var body: some View {
-        if timerViewModel.isDisplaySetTimeView {
-            SetTimerView(timerViewModel: timerViewModel)
-        } else {
-            TimerOperationView(timerViewModel: timerViewModel)
+        TabView {
+            Text("Calendar")
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Calendar")
+                }
+            if timerViewModel.isDisplaySetTimeView {
+                SetTimerView(timerViewModel: timerViewModel)
+                    .tabItem {
+                        Image(systemName: "timer")
+                        Text("Timer")
+                    }
+            } else {
+                TimerOperationView(timerViewModel: timerViewModel)
+                    .tabItem {
+                        Image(systemName: "timer")
+                        Text("Timer")
+                    }
+            }
         }
     }
 }
