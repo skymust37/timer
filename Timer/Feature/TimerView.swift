@@ -13,24 +13,28 @@ struct TimerView: View {
     var body: some View {
         TabView {
             Text("Calendar")
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Calendar")
-                }
+                .modifier(TabItemModifier(imageName: "calendar", title: "Calendar"))
             if timerViewModel.isDisplaySetTimeView {
                 SetTimerView(timerViewModel: timerViewModel)
-                    .tabItem {
-                        Image(systemName: "timer")
-                        Text("Timer")
-                    }
+                    .modifier(TabItemModifier(imageName: "timer", title: "Timer"))
             } else {
                 TimerOperationView(timerViewModel: timerViewModel)
-                    .tabItem {
-                        Image(systemName: "timer")
-                        Text("Timer")
-                    }
+                    .modifier(TabItemModifier(imageName: "timer", title: "Timer"))
             }
         }
+    }
+}
+
+private struct TabItemModifier: ViewModifier {
+    var imageName: String
+    var title: String
+    
+    func body(content: Content) -> some View {
+        content
+            .tabItem {
+                Image(systemName: imageName)
+                Text(title)
+            }
     }
 }
 
