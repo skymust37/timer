@@ -109,13 +109,13 @@ private struct TimePickerView: View {
     
     fileprivate var body: some View {
         VStack{
-            Rectangle()
-                .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
-                .frame(height: 1)
+//            Rectangle()
+//                .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
+//                .frame(height: 1)
             HStack{
                 Picker("Hour", selection: $timerViewModel.time.hours) {
                     ForEach(0..<24) { hour in
-                        Text("\(hour)시")
+                        Text("\(hour)시간")
                         
                     }
                 }
@@ -135,9 +135,9 @@ private struct TimePickerView: View {
             .labelsHidden()
             .pickerStyle(.wheel)
             
-            Rectangle()
-                .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
-                .frame(height: 1)
+//            Rectangle()
+//                .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
+//                .frame(height: 1)
         }
     }
 }
@@ -156,9 +156,14 @@ private struct TimerCreateBtnView: View {
                 timerViewModel.settingBtnTapped()
             },
             label: {
-                Text("설정하기")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(Color(red: 0.13, green: 0.81, blue: 0.47))
+                Image(systemName: "play.circle")
+                    .resizable()
+                    .frame(width:40, height: 40)
+//                Text("시작")
+//                    .font(.system(size: 23, weight: .bold))
+//                    //.foregroundColor(Color(red: 0.13, green: 0.81, blue: 0.47)) //녹색
+//                    .foregroundColor(Color(red: 0, green: 0, blue: 1.0)) //일반적인 파란색(선명하고 밝은 파란색으로, 청량하고 신뢰감을 주는 색상)
+//                    //.foregroundColor(Color(red: 0.663, green: 0.663, blue: 0.663)) //중간 회새(부드러운 느낌)
             }
         )
     }
@@ -191,9 +196,9 @@ private struct TimerOperationView: View {
                     }
                 }
                 
-                Circle()
-                    .stroke(Color(red: 1, green: 0.75, blue: 0.52), lineWidth: 6)
-                    .frame(width: 350)
+//                Circle()
+//                    .stroke(Color(red: 1, green: 0.75, blue: 0.52), lineWidth: 6)
+//                    .frame(width: 350)
             }
             
             Spacer()

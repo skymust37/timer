@@ -165,11 +165,12 @@
 			};
 			buildConfigurationList = 9426EF692C46B36F002E8132 /* Build configuration list for PBXProject "Timer" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 9426EF652C46B36F002E8132;
 			productRefGroup = 9426EF6F2C46B36F002E8132 /* Products */;
